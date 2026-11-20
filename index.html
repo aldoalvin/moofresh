@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#24499b" />
+  <meta name="description" content="MOOFRESH — pilihan minuman susu dengan berbagai rasa. Temukan menu Basic dan Fruity, tersedia dingin maupun panas." />
+  <title>MOOFRESH — Milk Time!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="assets/moofresh-logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #24499b;
+      --blue: #315db8;
+      --sky: #9bb5ed;
+      --pale: #edf3ff;
+      --ink: #17336f;
+      --white: #fff;
+      --muted: #63769e;
+      --line: #dce6fb;
+      --yellow: #ffda69;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: #f8faff;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e6edfb;
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: Nunito, sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: 0.3px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .brand span {
+      color: var(--navy);
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: #4f6590;
+    }
+
+    .navlinks a:hover {
+      color: var(--blue);
+    }
+
+    .nav-cta,
+    .primary {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 8px 20px #24499b28;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover,
+    .primary:hover {
+      transform: translateY(-2px);
+      background: #193c88;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(120deg, #9db7ee 0%, #c7d8fa 58%, #eaf1ff 100%);
+      padding: 72px 0 78px;
+    }
+
+    .hero:before,
+    .hero:after {
+      content: "";
+      position: absolute;
+      border: 2px solid #ffffff70;
+      border-radius: 50%;
+      width: 420px;
+      height: 420px;
+      right: -100px;
+      top: -220px;
+      pointer-events: none;
+    }
+
+    .hero:after {
+      width: 270px;
+      height: 270px;
+      right: 12%;
+      top: auto;
+      bottom: -205px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: #ffffffb8;
+      border: 1px solid #fff;
+      padding: 8px 14px;
+      border-radius: 99px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font: 900 clamp(40px, 6vw, 76px)/0.98 Nunito, sans-serif;
+      letter-spacing: -2px;
+      color: var(--navy);
+      margin: 22px 0 18px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #fff;
+      text-shadow: 0 3px 0 #315db8;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 510px;
+      color: #24427f;
+      margin: 0 0 27px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .secondary {
+      padding: 13px 20px;
+      border: 1.5px solid #fff;
+      background: #ffffff70;
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+
+    .secondary:hover {
+      background: #ffffffb5;
+      transform: translateY(-2px);
+    }
+
+    .hero-art {
+      min-height: 340px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .hero-logo {
+      width: min(330px, 80%);
+      border-radius: 34px;
+      transform: rotate(5deg);
+      box-shadow: 0 24px 55px #1c3c852c;
+      border: 9px solid #fff;
+    }
+
+    .bubble {
+      position: absolute;
+      background: #fff;
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px #24499b20;
+      white-space: nowrap;
+    }
+
+    .bubble.one {
+      top: 15px;
+      right: 5px;
+      transform: rotate(7deg);
+    }
+
+    .bubble.two {
+      bottom: 17px;
+      left: 0;
+      transform: rotate(-7deg);
+    }
+
+    /* Trust Bar */
+    .trust {
+      padding: 20px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px 46px;
+      flex-wrap: wrap;
+      color: #5570a6;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .trust span {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7f9fe5;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* General Sections */
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 38px;
+    }
+
+    .kicker {
+      color: #6686c7;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .section-head h2 {
+      font: 900 clamp(28px, 4vw, 44px)/1.12 Nunito, sans-serif;
+      color: var(--navy);
+      margin: 10px 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Menu Section */
+    .menu-section {
+      background: #f8faff;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .menu-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 27px;
+      box-shadow: 0 12px 35px #24499b09;
+    }
+
+    .menu-card.fruity {
+      background: linear-gradient(145deg, #fff 55%, #f0f4ff);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .card-top h3 {
+      font: 900 24px Nunito, sans-serif;
+      margin: 0;
+      color: var(--navy);
+    }
+
+    .pill {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 900;
+      padding: 7px 11px;
+      border-radius: 99px;
+      background: #eaf0ff;
+      color: #315db8;
+      flex-shrink: 0;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid #edf1fa;
+      gap: 14px;
+    }
+
+    .menu-item:last-child {
+      border-bottom: 0;
+    }
+
+    .item-name {
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .item-note {
+      font-size: 11px;
+      color: #8b9aba;
+      margin-top: 3px;
+    }
+
+    .prices {
+      display: flex;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+
+    .price {
+      min-width: 53px;
+      text-align: center;
+      background: #f1f5ff;
+      border-radius: 11px;
+      padding: 7px 8px;
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .price small {
+      display: block;
+      font-size: 9px;
+      color: #8193b8;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .price.hot {
+      background: #fff5d9;
+      color: #89671a;
+    }
+
+    .price.hot small {
+      color: #b2944b;
+    }
+
+    .sugar {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: #eaf1ff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .sugar strong {
+      font-size: 14px;
+    }
+
+    .sugar p {
+      margin: 4px 0 0;
+      color: #7284a9;
+      font-size: 12px;
+    }
+
+    .sugar-options {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .sugar-options span {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 7px 10px;
+      background: #fff;
+      border-radius: 99px;
+      color: #4565a8;
+    }
+
+    /* Location Section (Lokasi & Jam dengan Embed Maps) */
+    .location-section {
+      background: var(--pale);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .location-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 35px #24499b09;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .location-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px #24499b14;
+    }
+
+    .pin-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .pin-icon {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 14px;
+      background: #eaf1ff;
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .pin-badge {
+      display: inline-block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 900;
+      padding: 5px 10px;
+      border-radius: 99px;
+      background: #fff5d9;
+      color: #89671a;
+      margin-bottom: 6px;
+    }
+
+    .pin-badge.night {
+      background: #eaf0ff;
+      color: #315db8;
+    }
+
+    .pin-header h3 {
+      font: 900 20px/1.25 Nunito, sans-serif;
+      color: var(--navy);
+      margin: 0 0 3px;
+    }
+
+    .pin-city {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Kotak Peta yang Bisa Langsung Diklik */
+    .map-embed-wrap {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #e9effb;
+    }
+
+    .map-embed-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      pointer-events: none;
+    }
+
+    .map-click-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: block;
+      background: transparent;
+      transition: background 0.2s;
+    }
+
+    .map-click-overlay:hover {
+      background: rgba(23, 51, 111, 0.08);
+    }
+
+    .pin-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pin-hours {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink);
+      background: #f4f7ff;
+      padding: 8px 13px;
+      border-radius: 12px;
+    }
+
+    /* About Section */
+    .about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-mark {
+      background: var(--sky);
+      border-radius: 30px;
+      padding: 35px;
+      display: grid;
+      place-items: center;
+      min-height: 300px;
+    }
+
+    .about-mark img {
+      width: min(250px, 90%);
+      border-radius: 24px;
+    }
+
+    .about-copy h2 {
+      font: 900 clamp(30px, 4vw, 40px)/1.08 Nunito, sans-serif;
+      color: var(--navy);
+      margin: 12px 0 16px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .feature {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 13px;
+      background: #eaf1ff;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 18px;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .feature small {
+      color: #8292b2;
+      line-height: 1.5;
+    }
+
+    /* CTA Section */
+    .cta-band {
+      padding: 0 0 82px;
+      background: #fff;
+    }
+
+    .cta-box {
+      border-radius: 28px;
+      background: linear-gradient(120deg, #24499b, #3c68c0);
+      padding: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-box:after {
+      content: 'MOO';
+      position: absolute;
+      font: 900 130px Nunito, sans-serif;
+      color: #ffffff0d;
+      right: 25px;
+      bottom: -48px;
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
+      font: 900 clamp(24px, 3vw, 32px) Nunito, sans-serif;
+      margin: 0 0 8px;
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: #dce7ff;
+    }
+
+    .cta-box .secondary {
+      background: #fff;
+      color: var(--navy);
+      border: 0;
+      position: relative;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    /* Footer */
+    footer {
+      background: #142e68;
+      color: #d9e5ff;
+      padding: 30px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font: 900 18px Nunito, sans-serif;
+    }
+
+    .footer-brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: #aebfe5;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    /* Tablet Breakpoint (<= 960px) */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-art {
+        min-height: 290px;
+      }
+
+      .bubble.one {
+        right: 14%;
+      }
+
+      .bubble.two {
+        left: 14%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .about-mark {
+        min-height: 240px;
+      }
+    }
+
+    /* Mobile Breakpoint (<= 760px) */
+    @media (max-width: 760px) {
+      .wrap {
+        width: calc(100% - 32px);
+      }
+
+      .nav {
+        height: 68px;
+      }
+
+      .brand {
+        font-size: 18px;
+        gap: 9px;
+      }
+
+      .brand img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .navlinks {
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .navlinks a:not(.nav-cta) {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 48px 0 54px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-art {
+        min-height: 255px;
+      }
+
+      .hero-logo {
+        width: 215px;
+        border-width: 7px;
+      }
+
+      .bubble {
+        font-size: 12px;
+        padding: 10px 13px;
+      }
+
+      .bubble.one {
+        right: 4%;
+        top: 4px;
+      }
+
+      .bubble.two {
+        left: 4%;
+        bottom: 4px;
+      }
+
+      .trust-row {
+        gap: 12px 22px;
+        font-size: 12px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .menu-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card,
+      .location-card {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .card-top h3 {
+        font-size: 21px;
+      }
+
+      .map-embed-wrap {
+        height: 180px;
+      }
+
+      .sugar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .cta-band {
+        padding-bottom: 60px;
+      }
+
+      .cta-box {
+        padding: 32px 22px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-box .secondary {
+        width: 100%;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .footer-note {
+        text-align: center;
+      }
+    }
+
+    /* Small Mobile Breakpoint (<= 400px) */
+    @media (max-width: 400px) {
+      .wrap {
+        width: calc(100% - 24px);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-actions a {
+        width: 100%;
+      }
+
+      .item-name {
+        font-size: 13.5px;
+      }
+
+      .price {
+        min-width: 46px;
+        padding: 6px 5px;
+        font-size: 12px;
+      }
+
+      .menu-card,
+      .location-card {
+        padding: 16px;
+      }
+
+      .pin-header h3 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home">
+        <img src="assets/moofresh-logo.png" alt="Logo MOOFRESH">
+        <span>MOOFRESH</span>
+      </a>
+      <nav class="navlinks" aria-label="Navigasi utama">
+        <a href="#menu">Menu</a>
+        <a href="#lokasi">Lokasi</a>
+        <a href="#about">Tentang</a>
+        <a class="nav-cta" href="https://www.instagram.com/moofresh.id/" target="_blank" rel="noopener">Instagram ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">🥛 Milk time, happy time!</span>
+          <h1>Fresh mood,<br><em>fresh milk.</em></h1>
+          <p>Temukan pilihan minuman susu MOOFRESH dengan beragam rasa favorit. Mau yang klasik, fruity, dingin, atau hangat? Pilih sesuai mood kamu!</p>
+          <div class="hero-actions">
+            <a class="primary" href="#menu">Lihat Menu <span aria-hidden="true">&nbsp;→</span></a>
+            <a class="secondary" href="#lokasi">Cek Lokasi Jualan</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="bubble one">MILK TIME! 🥛</div>
+          <img class="hero-logo" src="assets/moofresh-logo.png" alt="MOOFRESH — Milk Time, EST. 2024">
+          <div class="bubble two">Your daily moo-ment ✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust">
+      <div class="wrap trust-row">
+        <span><i class="dot"></i> Banyak pilihan rasa</span>
+        <span><i class="dot"></i> Tersedia Cold &amp; Hot</span>
+        <span><i class="dot"></i> Atur level gula</span>
+      </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Find your favourite</span>
+          <h2>Menu MOOFRESH</h2>
+          <p>Pilih rasa favoritmu. Semua harga di bawah mengikuti daftar menu cup yang tersedia.</p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="card-top">
+              <h3>Basic Option</h3>
+              <span class="pill">Classic picks</span>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="item-name">Moo Original</div>
+                <div class="item-note">Simple, milky, classic</div>
+              </div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>8K</div>
+                <div class="price hot"><small>HOT</small>9K</div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="item-name">Moo Choco</div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>10K</div>
+                <div class="price hot"><small>HOT</small>11K</div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="item-name">Moo Vanilla</div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>10K</div>
+                <div class="price hot"><small>HOT</small>11K</div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="item-name">Moo Strawberry</div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>10K</div>
+                <div class="price hot"><small>HOT</small>11K</div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="item-name">Moo Matcha</div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>13K</div>
+                <div class="price hot"><small>HOT</small>14K</div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="item-name">Moo Coffee</div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>13K</div>
+                <div class="price hot"><small>HOT</small>14K</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card fruity">
+            <div class="card-top">
+              <h3>Fruity Option</h3>
+              <span class="pill">Fruit series</span>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="item-name">Moo Strawberry</div>
+                <div class="item-note">Fruity milk series</div>
+              </div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>13K</div>
+                <div class="price hot"><small>HOT</small>14K</div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="item-name">Moo Blueberry</div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>13K</div>
+                <div class="price hot"><small>HOT</small>14K</div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="item-name">Moo Mangga</div>
+              <div class="prices">
+                <div class="price"><small>COLD</small>13K</div>
+                <div class="price hot"><small>HOT</small>14K</div>
+              </div>
+            </div>
+
+            <div class="sugar">
+              <div>
+                <strong>Atur tambahan gula</strong>
+                <p>Pilih tingkat manis sesuai selera.</p>
+              </div>
+              <div class="sugar-options">
+                <span>Tanpa</span>
+                <span>Less</span>
+                <span>Normal</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Schedule Section -->
+    <section class="location-section" id="lokasi">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Find us nearby</span>
+          <h2>Lokasi &amp; Jam Jualan</h2>
+          <p>Klik pada peta untuk langsung membuka rute menuju lokasi MOOFRESH di Google Maps.</p>
+        </div>
+
+        <div class="location-grid">
+          <!-- Pin 1: Masjid Agung Darul Amal -->
+          <article class="location-card">
+            <div class="pin-header">
+              <div class="pin-icon" aria-hidden="true">📍</div>
+              <div>
+                <span class="pin-badge">Pagi</span>
+                <h3>Masjid Agung Darul Amal</h3>
+                <p class="pin-city">Kota Salatiga</p>
+              </div>
+            </div>
+
+            <div class="map-embed-wrap">
+              <iframe
+                title="Peta Masjid Agung Darul Amal Kota Salatiga"
+                src="https://maps.google.com/maps?q=Masjid%20Agung%20Darul%20Amal%20Salatiga&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <a
+                class="map-click-overlay"
+                href="https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Darul+Amal+Salatiga"
+                target="_blank"
+                rel="noopener"
+                aria-label="Buka Masjid Agung Darul Amal Salatiga di Google Maps">
+              </a>
+            </div>
+
+            <div class="pin-footer">
+              <div class="pin-hours">🕒 07.00 – 09.30 WIB</div>
+            </div>
+          </article>
+
+          <!-- Pin 2: GPD Salatiga -->
+          <article class="location-card">
+            <div class="pin-header">
+              <div class="pin-icon" aria-hidden="true">📍</div>
+              <div>
+                <span class="pin-badge night">Sore – Malam</span>
+                <h3>GPD Salatiga</h3>
+                <p class="pin-city">Kota Salatiga</p>
+              </div>
+            </div>
+
+            <div class="map-embed-wrap">
+              <iframe
+                title="Peta GPD Salatiga"
+                src="https://maps.google.com/maps?q=GPD%20Salatiga&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <a
+                class="map-click-overlay"
+                href="https://www.google.com/maps/search/?api=1&query=GPD+Salatiga"
+                target="_blank"
+                rel="noopener"
+                aria-label="Buka GPD Salatiga di Google Maps">
+              </a>
+            </div>
+
+            <div class="pin-footer">
+              <div class="pin-hours">🕒 15.00 – 22.00 WIB</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-mark">
+          <img src="assets/moofresh-logo.png" alt="Logo MOOFRESH">
+        </div>
+        <div class="about-copy">
+          <span class="kicker">A little about us</span>
+          <h2>Make every sip a moo-ment.</h2>
+          <p>MOOFRESH hadir dengan pilihan menu minuman susu yang bisa kamu nikmati sesuai selera. Dari rasa klasik sampai fruity, pilih varian dan temperatur favoritmu.</p>
+          <div class="feature">
+            <div class="feature-icon">🥛</div>
+            <div>
+              <strong>Beragam varian rasa</strong>
+              <small>Pilihan Basic dan Fruity untuk menemani harimu.</small>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">❄️</div>
+            <div>
+              <strong>Cold atau Hot</strong>
+              <small>Nikmati pilihan minuman dingin maupun hangat.</small>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🍬</div>
+            <div>
+              <strong>Pilihan level gula</strong>
+              <small>Tanpa gula tambahan, less, atau normal.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+      <div class="wrap">
+        <div class="cta-box">
+          <div>
+            <h2>Ready for milk time?</h2>
+            <p>Cek update menu dan informasi terbaru MOOFRESH melalui Instagram.</p>
+          </div>
+          <a class="secondary" href="https://www.instagram.com/moofresh.id/" target="_blank" rel="noopener">Follow @moofresh.id ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="footer-brand">
+        <img src="assets/moofresh-logo.png" alt="">
+        <span>MOOFRESH · EST. 2024</span>
+      </div>
+      <div class="footer-note">
+        Milk Time, Happy Time!<br>© <span id="year"></span> MOOFRESH
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
